@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import PollHistory from "../components/PollHistory";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_BACKEND_URI || "http://localhost:5000";
 
 interface Option {
   _id: string;
