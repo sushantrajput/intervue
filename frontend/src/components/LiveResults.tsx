@@ -33,6 +33,7 @@ const LiveResults = () => {
 
   const [timer, setTimer] = useState(timeLimit || 60);
   const [results, setResults] = useState<Results | null>(null);
+  const isTeacher = localStorage.getItem("userRole") === "teacher";
   const [canAskNew, setCanAskNew] = useState(false);
 
   useEffect(() => {
@@ -118,7 +119,7 @@ const LiveResults = () => {
           </div>
 
           <div className="mt-6 flex justify-center gap-4">
-            {canAskNew && (
+            {isTeacher && (
               <button
                 onClick={() => navigate("/teacher")}
                 className="bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-primary/80"
